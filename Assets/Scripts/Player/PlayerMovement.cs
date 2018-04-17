@@ -2,9 +2,10 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float speed = 6f;
+	public float speed = 2f;
 
 	Vector3 movement;
+	Vector3 temp;
 	Animator anim;
 	Rigidbody playerRigidbody;
 	int floorMask;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 		floorMask = LayerMask.GetMask ("Floor");
 		anim = GetComponent <Animator> ();
 		playerRigidbody = GetComponent<Rigidbody> ();
+		temp.Set(0, 0, 0);
 	}
 
 	void FixedUpdate()
@@ -54,7 +56,11 @@ public class PlayerMovement : MonoBehaviour
 
 	void Animating(float h, float v)
 	{
-		bool walking = h != 0f || v != 0f;
-		anim.SetBool ("IsWalking", walking);
+		if(movement != temp){
+			anim.SetFloat ("Speed_f", speed);
+		}
+		else{
+			anim.SetFloat ("Speed_f", 0);
+		}
 	}
 }
