@@ -66,15 +66,19 @@ public class EnemyHealth : MonoBehaviour
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play ();
+		StartSinking ();
+		//gameObject.SetActive (false);
     }
 
 
     public void StartSinking ()
     {
+		print ("123");
         GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false;
         GetComponent <Rigidbody> ().isKinematic = true;
         isSinking = true;
-        //ScoreManager.score += scoreValue;
-        Destroy (gameObject, 2f);
+        ScoreManager.score += scoreValue;
+        Destroy (gameObject, 1f);
     }
 }
+	

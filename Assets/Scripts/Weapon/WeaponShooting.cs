@@ -34,6 +34,8 @@ public class WeaponShooting : MonoBehaviour {
 			transformObj = weapon.transform.Find (weaponName).gameObject;
 			transformObj.SetActive (true);
 		}
+
+
 	}
 
 	void findGun(){

@@ -8,14 +8,19 @@ public class PlayerMovement : MonoBehaviour
 	Vector3 temp;
 	Animator anim;
 	Rigidbody playerRigidbody;
+	GameObject weapon;
+	WeaponShooting weaponShooting;
+
 	int floorMask;
 	float camRayLength = 100f;
+	int gunType;
 
 	void Awake()
 	{
 		floorMask = LayerMask.GetMask ("Floor");
 		anim = GetComponent <Animator> ();
 		playerRigidbody = GetComponent<Rigidbody> ();
+		weaponShooting = GetComponentInChildren<WeaponShooting> ();
 		temp.Set(0, 0, 0);
 	}
 
@@ -23,10 +28,13 @@ public class PlayerMovement : MonoBehaviour
 	{
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
+		gunType = weaponShooting.type;
 
 		Move (h, v);
 		Turning ();
 		Animating (h, v);
+
+
 	}
 
 	void Move (float h, float v)
@@ -62,5 +70,6 @@ public class PlayerMovement : MonoBehaviour
 		else{
 			anim.SetFloat ("Speed_f", 0);
 		}
+		anim.SetInteger ("WeaponType_int", gunType);
 	}
 }

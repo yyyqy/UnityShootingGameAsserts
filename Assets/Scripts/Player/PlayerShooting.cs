@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
 	public int type = 0;
 
 
-	Animator anim;
+	//Animator anim;
     float timer;
     Ray shootRay = new Ray();
     RaycastHit shootHit;
@@ -23,11 +23,11 @@ public class PlayerShooting : MonoBehaviour
     void Awake ()
     {
         shootableMask = LayerMask.GetMask ("Shootable");
-		anim = GetComponent <Animator> ();
-        //gunParticles = GetComponent<ParticleSystem> ();
-        //gunLine = GetComponent <LineRenderer> ();
-        //gunAudio = GetComponent<AudioSource> ();
-        //gunLight = GetComponent<Light> ();
+		//anim = GetComponent <Animator> ();
+        gunParticles = GetComponent<ParticleSystem> ();
+        gunLine = GetComponent <LineRenderer> ();
+        gunAudio = GetComponent<AudioSource> ();
+        gunLight = GetComponent<Light> ();
     }
 
 
@@ -45,14 +45,14 @@ public class PlayerShooting : MonoBehaviour
             DisableEffects ();
         }
 
-		anim.SetInteger ("WeaponType_int", type);
+		//anim.SetInteger ("WeaponType_int", type);
     }
 
 
     public void DisableEffects ()
     {
-        //gunLine.enabled = false;
-        //gunLight.enabled = false;
+        gunLine.enabled = false;
+        gunLight.enabled = false;
     }
 
 
@@ -60,18 +60,18 @@ public class PlayerShooting : MonoBehaviour
     {
         timer = 0f;
 
-        //gunAudio.Play ();
+        gunAudio.Play ();
 
-        //gunLight.enabled = true;
+        gunLight.enabled = true;
 
-        //gunParticles.Stop ();
-        //gunParticles.Play ();
+        gunParticles.Stop ();
+        gunParticles.Play ();
 
-        //gunLine.enabled = true;
-        //gunLine.SetPosition (0, transform.position);
+        gunLine.enabled = true;
+        gunLine.SetPosition (0, transform.position);
 
-        //shootRay.origin = transform.position;
-        //shootRay.direction = transform.forward;
+        shootRay.origin = transform.position;
+        shootRay.direction = transform.forward;
 
         if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
         {
@@ -80,11 +80,11 @@ public class PlayerShooting : MonoBehaviour
             {
                 enemyHealth.TakeDamage (damagePerShot, shootHit.point);
             }
-            //gunLine.SetPosition (1, shootHit.point);
+            gunLine.SetPosition (1, shootHit.point);
         }
         else
         {
-            //gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+            gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
         }
     }
 }
