@@ -5,10 +5,7 @@ public class PlayerShooting : MonoBehaviour
     public int damagePerShot = 20;
     public float timeBetweenBullets = 0.15f;
     public float range = 100f;
-	public int type = 0;
 
-
-	//Animator anim;
     float timer;
     Ray shootRay = new Ray();
     RaycastHit shootHit;
@@ -23,7 +20,6 @@ public class PlayerShooting : MonoBehaviour
     void Awake ()
     {
         shootableMask = LayerMask.GetMask ("Shootable");
-		//anim = GetComponent <Animator> ();
         gunParticles = GetComponent<ParticleSystem> ();
         gunLine = GetComponent <LineRenderer> ();
         gunAudio = GetComponent<AudioSource> ();
@@ -37,15 +33,14 @@ public class PlayerShooting : MonoBehaviour
 
 		if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
         {
-            Shoot ();
+			Shoot ();
         }
 
         if(timer >= timeBetweenBullets * effectsDisplayTime)
         {
             DisableEffects ();
         }
-
-		//anim.SetInteger ("WeaponType_int", type);
+			
     }
 
 

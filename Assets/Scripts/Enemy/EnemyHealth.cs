@@ -73,7 +73,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void StartSinking ()
     {
-		print ("123");
         GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false;
         GetComponent <Rigidbody> ().isKinematic = true;
         isSinking = true;

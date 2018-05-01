@@ -6,13 +6,15 @@ public class WeaponShooting : MonoBehaviour {
 
 	public int type = 0;
 	Animator anim;
-	GameObject weapon, transformObj;
+	GameObject weapon, transformObj, gunBarrelEnd;
+	PlayerShooting playerShooting;
 	string weaponName;
 
 	// Use this for initialization
 	void Awake () {
 		anim = GetComponent <Animator> ();
 		weapon = GameObject.Find ("Weapon");
+		playerShooting = GameObject.Find ("GunBarrelEnd").GetComponent<PlayerShooting> ();
 	}
 	
 	// Update is called once per frame
@@ -45,24 +47,39 @@ public class WeaponShooting : MonoBehaviour {
 			break;
 		case 1:
 			weaponName = "Weapon_Pistol";
+			playerShooting.damagePerShot = 20;
+			playerShooting.timeBetweenBullets = 0.5f;
+			//40
 			break;
 		case 2:
 			weaponName = "Weapon_AssultRifle01";
+			playerShooting.damagePerShot = 40;
+			playerShooting.timeBetweenBullets = 0.25f;
+			//160
 			break;
 		case 3:
 			weaponName = "Weapon_AssultRifle02";
+			playerShooting.damagePerShot = 50;
+			playerShooting.timeBetweenBullets = 0.2f;
+			//250
 			break;
 		case 4:
 			weaponName = "Weapon_Shotgun";
 			break;
 		case 5:
 			weaponName = "Weapon_SniperRifle";
+			playerShooting.damagePerShot = 200;
+			playerShooting.timeBetweenBullets = 1.0f;
+			//200
 			break;
 		case 6:
 			weaponName = "Weapon_Rifle";
 			break;
 		case 7:
 			weaponName = "Weapon_SubMachineGun";
+			playerShooting.damagePerShot = 10;
+			playerShooting.timeBetweenBullets = 0.1f;
+			//100
 			break;
 		case 8:
 			weaponName = "Weapon_RPG";
