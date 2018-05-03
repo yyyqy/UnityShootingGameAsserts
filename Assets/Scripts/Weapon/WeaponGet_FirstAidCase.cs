@@ -6,12 +6,14 @@ public class WeaponGet_FirstAidCase : MonoBehaviour {
 	GameObject player;
 	WeaponShooting weapon;
 	PlayerHealth health;
+	WeaponManager weaponflag;
 
 	void Awake ()
 	{
 		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		health = GameObject.Find ("Player").GetComponent<PlayerHealth> ();
+		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<WeaponManager> ();
 	}
 
 
@@ -19,7 +21,9 @@ public class WeaponGet_FirstAidCase : MonoBehaviour {
 	{
 		if(other.gameObject == player)
 		{
-			health.currentHealth += 60;
+			health.currentHealth = 100;
+			health.healthSlider.value = health.currentHealth;
+			weaponflag.flag = 0;
 			Destroy (gameObject);
 		}
 	}

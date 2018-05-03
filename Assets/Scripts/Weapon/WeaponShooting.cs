@@ -68,8 +68,8 @@ public class WeaponShooting : MonoBehaviour {
 			break;
 		case 5:
 			weaponName = "Weapon_SniperRifle";
-			playerShooting.damagePerShot = 200;
-			playerShooting.timeBetweenBullets = 1.0f;
+			playerShooting.damagePerShot = 220;
+			playerShooting.timeBetweenBullets = 0.8f;
 			//200
 			break;
 		case 6:

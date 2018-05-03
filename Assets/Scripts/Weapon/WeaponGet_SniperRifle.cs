@@ -6,12 +6,13 @@ public class WeaponGet_SniperRifle : MonoBehaviour {
 	int ctype = 5;
 	GameObject player;
 	WeaponShooting weapon;
-
+	WeaponManager weaponflag;
 
 	void Awake ()
 	{
 		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
+		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<WeaponManager> ();
 	}
 
 
@@ -20,6 +21,7 @@ public class WeaponGet_SniperRifle : MonoBehaviour {
 		if(other.gameObject == player)
 		{
 			weapon.type = ctype;
+			weaponflag.flag = 0;
 			Destroy (gameObject);
 		}
 	}
