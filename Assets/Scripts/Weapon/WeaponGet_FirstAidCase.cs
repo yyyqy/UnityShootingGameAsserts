@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WeaponGet_FirstAidCase : MonoBehaviour {
+	GameObject player;
+	WeaponShooting weapon;
+	PlayerHealth health;
+
+	void Awake ()
+	{
+		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
+		health = GameObject.Find ("Player").GetComponent<PlayerHealth> ();
+	}
+
+
+	void OnTriggerEnter (Collider other)
+	{
+		if(other.gameObject == player)
+		{
+			health.currentHealth += 60;
+			Destroy (gameObject);
+		}
+	}
+}

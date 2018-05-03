@@ -360,6 +360,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4587752241820654}
   - component: {fileID: 95318954786895426}
+  - component: {fileID: 135204772706072684}
+  - component: {fileID: 114619243708721470}
   m_Layer: 0
   m_Name: AssultRifle02
   m_TagString: Untagged
@@ -977,6 +979,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114619243708721470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887318608397004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1026405f3454f4b74ba69f86548db99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135204772706072684
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887318608397004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137238866305753776
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
