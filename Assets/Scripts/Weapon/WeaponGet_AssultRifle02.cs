@@ -6,13 +6,13 @@ public class WeaponGet_AssultRifle02 : MonoBehaviour {
 	int ctype = 3;
 	GameObject player;
 	WeaponShooting weapon;
-	WeaponManager weaponflag;
+	M4Manager weaponflag;
 
 	void Awake ()
 	{
 		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
-		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<WeaponManager> ();
+		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<M4Manager> ();
 	}
 
 

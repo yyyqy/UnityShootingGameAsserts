@@ -6,13 +6,13 @@ public class WeaponGet_SniperRifle : MonoBehaviour {
 	int ctype = 5;
 	GameObject player;
 	WeaponShooting weapon;
-	WeaponManager weaponflag;
+	SniperManager weaponflag;
 
 	void Awake ()
 	{
 		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
-		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<WeaponManager> ();
+		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<SniperManager> ();
 	}
 
 

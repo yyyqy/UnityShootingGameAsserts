@@ -6,13 +6,13 @@ public class WeaponGet_SubMachineGun : MonoBehaviour {
 	int ctype = 7;
 	GameObject player;
 	WeaponShooting weapon;
-	WeaponManager weaponflag;
+	SubMachinwManager weaponflag;
 
 	void Awake ()
 	{
 		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
-		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<WeaponManager> ();
+		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<SubMachinwManager> ();
 	}
 
 

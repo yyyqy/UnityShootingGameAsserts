@@ -26,7 +26,7 @@ public class TimeShow : MonoBehaviour {
         {
             spendTime += 0;
         }
-            minute = (int)spendTime / 3600;
+            minute = (int)spendTime / 60;
             second = (int)(spendTime - minute * 60);
             millisecond = (int)((spendTime - (int)spendTime) * 1000);
 

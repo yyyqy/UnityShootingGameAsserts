@@ -6,14 +6,14 @@ public class WeaponGet_FirstAidCase : MonoBehaviour {
 	GameObject player;
 	WeaponShooting weapon;
 	PlayerHealth health;
-	WeaponManager weaponflag;
+	FirstAidManager weaponflag;
 
 	void Awake ()
 	{
 		weapon = GameObject.Find ("Weapon").GetComponent<WeaponShooting> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		health = GameObject.Find ("Player").GetComponent<PlayerHealth> ();
-		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<WeaponManager> ();
+		weaponflag = GameObject.Find ("WeaponManager 1").GetComponent<FirstAidManager> ();
 	}
 
 
