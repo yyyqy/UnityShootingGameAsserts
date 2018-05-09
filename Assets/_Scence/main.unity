@@ -7713,6 +7713,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114054135979131604, guid: e41d4f45d18eb401f962a8ffe996b630,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136347658682699782, guid: e41d4f45d18eb401f962a8ffe996b630, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e41d4f45d18eb401f962a8ffe996b630, type: 2}
@@ -21594,7 +21599,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
